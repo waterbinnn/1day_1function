@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+  <div class="alert alert-danger">
+    <span id="count">5</span>초 뒤 💥
+  </div>
+
+  <script>
+    const counter = document.querySelector('#count');
+    const alert = document.querySelector('.alert');
+
+    let timerEnd = setInterval(function () {
+      alert.remove('.alert')
+    }, 5000);
+
+    let count = 5;
+
+    setInterval(function () {
+      count--;
+      if (count >= 0) {
+        counter.innerHTML = count;
+      }
+    }, 1000);
+
+    if (count === 0) {
+      clearTimeout(timerEnd);
+    }
+
+
+  </script>
+</body>
+
+</html>
